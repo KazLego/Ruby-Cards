@@ -1,0 +1,77 @@
+.title{
+font-size: 100px;
+color: #ff5959;
+}
+img{
+
+box-shadow: 0px 0px 10px rgb(51, 0, 0) ;
+}
+.card2{
+    transform: translateX(-20px);
+}
+.card3{
+    transform: translateX(-30px);
+}
+.card4{
+    transform: translateX(-40px);
+}
+.card5{
+    transform: translateX(-50px);
+}
+.cards{
+transform: scaleX(-1);
+margin: auto;
+display: inline-block;
+}
+.game{
+text-align: center;
+
+}
+h6{
+    font-size: 3px;
+    color: #fc2e2e;
+    pointer-events: none;
+}
+body{
+    font-family: 'Pixelify Sans', sans-serif;
+background-image: url(back.png);
+background-size: cover;
+}
+button,input{
+    font-family: 'Pixelify Sans', sans-serif;
+background-color: black;
+outline-color: #fc2e2e;
+color: #fc2e2e;
+}
+input{
+width: 50px;
+height: 50px;
+text-align: center;
+font-size: 40px;
+display: block;
+margin: auto;
+color: #fc2e2e;
+}
+p{
+color: #fc2e2e;
+pointer-events: none;
+}
+::-moz-selection { /* Code for Firefox */
+    color: rgb(0, 0, 0);
+    background: rgb(255, 0, 0);
+  }
+  
+  ::selection {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 0, 0);
+  }
+  .undertale{
+color: #510000;
+font-size: 40px;
+
+  }
+.card{
+transition: 5s;
+
+}
+
