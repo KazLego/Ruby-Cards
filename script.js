@@ -6,12 +6,16 @@ let input = document.getElementById("input")
 let secret_word = words[Math.floor(Math.random() * words.length)]
 let used_letters = document.getElementsByClassName("uselet")[0]
 let letters = []
+let cards_Plurel = document.getElementsByClassName("cards")[0]
 let undertale = document.getElementsByClassName("undertale")[0]
 let title = document.getElementsByClassName("title")[0]
 undertale.innerHTML = "_".repeat(secret_word.length)
 gamble.onclick = function (event) {
-    letters.push(input.value)
-    console.log(input.value)
+    if(!letters.includes(input.value)){
+        letters.push(input.value)
+        console.log(input.value)
+    }
+
     input.select()
     used_letters.innerHTML = letters
     if (secret_word.includes(input.value)) {
@@ -31,13 +35,23 @@ gamble.onclick = function (event) {
         if (uc == 0) {
             used_letters.innerHTML = "YOU WIN"
             used_letters.style.transform = "scale(10)"
+            gamble.disabled = true
         }
         undertale.innerHTML = ucw
         // title.innerHTML="you win"
 
     }else{
         let card = document.getElementsByClassName("card")[0]
+        let card2 = document.getElementsByClassName("card")
+        if( card2.length == 1 ){
+console.log("you lost buddy");
+used_letters.innerHTML = "You lost all your money what do you do now"
+gamble.disabled = true
+undertale.innerHTML = secret_word
+
+        }
         card.style.transform="translate(1000px,1000px) rotate( 1800deg)"
+        card.classList.remove("card")
         setTimeout(() => {
             card.remove()  
         }, 5000);
@@ -56,4 +70,12 @@ waste.onclick = function (event) {
     undertale.innerHTML = "_".repeat(secret_word.length)
     used_letters.innerHTML = "THIS IS BASICALLY HANG MAN BUT YOU ARE GAMBLEING IF YOU LOOSE YOUR CARDS YOU LOOSE BUT IF YOU GUESS CORECTLY YOU WING WIN MONEY"
     used_letters.style.transform = "scale(1)"
+    cards_Plurel.innerHTML =`
+    <img  class="card card1" src="card-pixilart.png" alt="">
+    <img  class="card card2" src="card-pixilart.png" alt="">
+    <img  class="card card3" src="card-pixilart.png" alt="">
+    <img  class="card card4" src="card-pixilart.png" alt="">
+    <img  class="card card5" src="card-pixilart.png" alt="">
+    `
+    gamble.disabled = false
 }
